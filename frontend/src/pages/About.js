@@ -100,13 +100,16 @@ const About = () => (
           <h1 className="section-title">About Me</h1>
           <p style={{ color: 'var(--text2)', fontSize: '1.05rem', lineHeight: 1.8, marginBottom: 16 }}>
             {/* ↓ EDIT THIS — your real intro */}
-            Hey! I'm Aarya, a passionate software developer from Himachal Pradesh, India.
-            I'm on a mission to turn ideas into working software that actually helps people.
-            Currently deep-diving into React and full-stack development.
+           Hey! I'm Aarya, an aspiring Software Engineer from Himachal Pradesh, India. 
+           Driven by curiosity and a passion for technology, I enjoy building solutions that turn ideas into real-world impact. 
+           My interests span across software engineering, artificial intelligence, cloud technologies, and modern computing, and I'm constantly exploring new ways to learn, innovate, and create. 
+           I believe the best way to grow is by building things, solving meaningful problems, and occasionally spending far longer debugging than writing the code itself.
+
           </p>
           <p style={{ color: 'var(--text2)', fontSize: '1.05rem', lineHeight: 1.8 }}>
-            I believe great code isn't just functional — it's readable, maintainable, and built with
-            intent. I love solving problems, breaking things (intentionally), and building them better.
+            I believe great software is more than just working code—it's thoughtful, scalable, maintainable, and built with purpose. 
+            I'm passionate about solving challenging problems, understanding systems beyond the surface, and continuously refining ideas into elegant, impactful solutions.
+
           </p>
           <div className="about-tag-row">
             {['Problem Solver', 'Fast Learner', 'Team Player', 'Open Source Enthusiast', 'Night Owl Coder'].map(t => (

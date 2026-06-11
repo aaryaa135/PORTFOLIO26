@@ -274,8 +274,8 @@ const Home = () => {
           </p>
           <p style={{ color: 'var(--text2)', marginBottom: 40, maxWidth: 520, fontSize: '1.05rem', lineHeight: 1.7 }}
              className="fade-up fade-up-3">
-            Aspiring software developer from India. I build clean, purposeful software —
-            from the frontend pixel to the backend query. Currently levelling up in React.
+            Aspiring Software Engineer from India, driven by curiosity and a passion for technology. 
+            I enjoy building meaningful solutions, exploring emerging technologies, and turning ideas into reality through code.
           </p>
           <div className="hero-cta fade-up fade-up-4">
             <Link to="/projects" className="btn btn-primary">View Projects →</Link>
@@ -284,9 +284,9 @@ const Home = () => {
         </div>
         <div className="hero-meta">
           {/* Update with your real info */}
-          <span>📍 Himachal Pradesh, India</span>
-          <span>💼 Open to Work</span>
-          <span>🎯 Full Stack Dev</span>
+          <span>Himachal Pradesh, India</span>
+          <span>Open to Work</span>
+          <span>Full Stack Dev</span>
         </div>
         <div className="scroll-hint">
           <span>SCROLL</span>
@@ -315,11 +315,11 @@ const Home = () => {
         <h2 className="section-title">What's here</h2>
         <div className="featured-grid">
           {[
-            { to: '/about',    icon: '👾', title: 'About Me',     desc: 'My story, background, and what drives me to build.' },
-            { to: '/stack',    icon: '⚡', title: 'Tech Stack',   desc: 'The tools and technologies I use and am learning.' },
-            { to: '/projects', icon: '🚀', title: 'Projects',     desc: 'Real things I\'ve built — with code, purpose, and sweat.' },
-            { to: '/play',     icon: '🎮', title: 'Playground',   desc: 'Mini-games and interactive experiments. Take a break.' },
-            { to: '/contact',  icon: '💬', title: 'Contact',      desc: 'Reach out for work, collabs, or just to say hey.' },
+            { to: '/about',    icon: '1', title: 'About Me',     desc: 'My story, background, and what drives me to build.' },
+            { to: '/stack',    icon: '2', title: 'Tech Stack',   desc: 'The tools and technologies I use and am learning.' },
+            { to: '/projects', icon: '3', title: 'Projects',     desc: 'Real things I\'ve built — with code, purpose, and sweat.' },
+            { to: '/play',     icon: '4', title: 'Playground',   desc: 'Mini-games and interactive experiments. Take a break.' },
+            { to: '/contact',  icon: '5', title: 'Contact',      desc: 'Reach out for work, collabs, or just to say hey.' },
           ].map((f, i) => (
             <Link key={i} to={f.to} className="feat-card">
               <div className="feat-icon">{f.icon}</div>
