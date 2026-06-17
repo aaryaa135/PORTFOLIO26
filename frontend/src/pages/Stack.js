@@ -254,7 +254,14 @@ const Stack = () => {
           </div>
           <div className="currently-row">
             {/* ↓ EDIT with what you're currently learning */}
-            {['React', 'Node.js + Express', 'REST APIs', 'MongoDB', 'Git workflows', 'Clean Code practices'].map(item => (
+            {[
+               'System Design & Scalability',
+               'Docker & Containerization',
+               'AWS Cloud Architecture',
+               'Microservices Architecture',
+               'Distributed Systems',
+               'MLOps & Model Deployment'
+              ].map(item => (
               <div key={item} className="currently-item">
                 <span className="spin-icon">⚙</span> {item}
               </div>
