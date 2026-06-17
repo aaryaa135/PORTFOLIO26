@@ -3,60 +3,60 @@ import React, { useState } from 'react';
 // Each skill: name, level 0-100, category, color, icon (emoji or text)
 const skills = [
   // Languages
-  { name: 'C', cat: 'Languages', color: '#A8B9CC' },
-  { name: 'C++', cat: 'Languages', color: '#00599C' },
-  { name: 'Python', cat: 'Languages', color: '#3776AB' },
-  { name: 'JavaScript', cat: 'Languages', color: '#F7DF1E' },
-  { name: 'SQL', cat: 'Languages', color: '#336791' },
+  { name: 'C', level: 65, cat: 'Languages', color: '#A8B9CC' },
+  { name: 'C++', level: 80, cat: 'Languages', color: '#00599C' },
+  { name: 'Python', level: 85, cat: 'Languages', color: '#3776AB' },
+  { name: 'JavaScript', level: 75, cat: 'Languages', color: '#F7DF1E' },
+  { name: 'SQL', level: 80, cat: 'Languages', color: '#336791' },
 
   // Backend
-  { name: 'FastAPI', cat: 'Backend', color: '#009688' },
-  { name: 'Django', cat: 'Backend', color: '#092E20' },
-  { name: 'Node.js', cat: 'Backend', color: '#339933' },
-  { name: 'Express.js', cat: 'Backend', color: '#444444' },
-  { name: 'REST API Design', cat: 'Backend', color: '#FF6B35' },
-  { name: 'REST API Automation', cat: 'Backend', color: '#FF8C42' },
+  { name: 'FastAPI', level: 80, cat: 'Backend', color: '#009688' },
+  { name: 'Django', level: 70, cat: 'Backend', color: '#092E20' },
+  { name: 'Node.js', level: 65, cat: 'Backend', color: '#339933' },
+  { name: 'Express.js', level: 65, cat: 'Backend', color: '#444444' },
+  { name: 'REST API Design', level: 85, cat: 'Backend', color: '#FF6B35' },
+  { name: 'REST API Automation', level: 85, cat: 'Backend', color: '#FF8C42' },
 
   // Databases
-  { name: 'PostgreSQL', cat: 'Databases', color: '#336791' },
-  { name: 'MySQL', cat: 'Databases', color: '#4479A1' },
-  { name: 'MongoDB', cat: 'Databases', color: '#47A248' },
-  { name: 'SQLAlchemy ORM', cat: 'Databases', color: '#D71F00' },
-  { name: 'RDBMS', cat: 'Databases', color: '#607D8B' },
+  { name: 'PostgreSQL', level: 75, cat: 'Databases', color: '#336791' },
+  { name: 'MySQL', level: 75, cat: 'Databases', color: '#4479A1' },
+  { name: 'MongoDB', level: 70, cat: 'Databases', color: '#47A248' },
+  { name: 'SQLAlchemy ORM', level: 70, cat: 'Databases', color: '#D71F00' },
+  { name: 'RDBMS', level: 80, cat: 'Databases', color: '#607D8B' },
 
   // CS Core
-  { name: 'Data Structures & Algorithms', cat: 'CS Core', color: '#FF5722' },
-  { name: 'OOP', cat: 'CS Core', color: '#9C27B0' },
-  { name: 'Operating Systems', cat: 'CS Core', color: '#3F51B5' },
-  { name: 'Computer Networks', cat: 'CS Core', color: '#009688' },
-  { name: 'DBMS', cat: 'CS Core', color: '#795548' },
+  { name: 'Data Structures & Algorithms', level: 80, cat: 'CS Core', color: '#FF5722' },
+  { name: 'OOP', level: 85, cat: 'CS Core', color: '#9C27B0' },
+  { name: 'Operating Systems', level: 75, cat: 'CS Core', color: '#3F51B5' },
+  { name: 'Computer Networks', level: 75, cat: 'CS Core', color: '#009688' },
+  { name: 'DBMS', level: 80, cat: 'CS Core', color: '#795548' },
 
   // Testing
-  { name: 'Pytest', cat: 'Testing', color: '#0A9EDC' },
-  { name: 'Test-Driven Development', cat: 'Testing', color: '#FF9800' },
-  { name: 'Postman', cat: 'Testing', color: '#FF6C37' },
-  { name: 'API Testing', cat: 'Testing', color: '#E91E63' },
+  { name: 'Pytest', level: 75, cat: 'Testing', color: '#0A9EDC' },
+  { name: 'Test-Driven Development', level: 70, cat: 'Testing', color: '#FF9800' },
+  { name: 'Postman', level: 85, cat: 'Testing', color: '#FF6C37' },
+  { name: 'API Testing', level: 85, cat: 'Testing', color: '#E91E63' },
 
   // Web
-  { name: 'HTML', cat: 'Web', color: '#E34F26' },
-  { name: 'CSS', cat: 'Web', color: '#1572B6' },
-  { name: 'React', cat: 'Web', color: '#61DAFB' },
-  { name: 'Next.js', cat: 'Web', color: '#000000' },
-  { name: 'Tailwind CSS', cat: 'Web', color: '#06B6D4' },
+  { name: 'HTML', level: 85, cat: 'Web', color: '#E34F26' },
+  { name: 'CSS', level: 80, cat: 'Web', color: '#1572B6' },
+  { name: 'React', level: 75, cat: 'Web', color: '#61DAFB' },
+  { name: 'Next.js', level: 65, cat: 'Web', color: '#000000' },
+  { name: 'Tailwind CSS', level: 75, cat: 'Web', color: '#06B6D4' },
 
   // Tools
-  { name: 'Git', cat: 'Tools', color: '#F05032' },
-  { name: 'GitHub', cat: 'Tools', color: '#181717' },
-  { name: 'Linux', cat: 'Tools', color: '#FCC624' },
-  { name: 'AWS', cat: 'Tools', color: '#FF9900' },
-  { name: 'VS Code', cat: 'Tools', color: '#007ACC' },
-  { name: 'Cisco DNA Center', cat: 'Tools', color: '#1BA0D7' },
-  { name: 'YOLOv8', cat: 'Tools', color: '#8A2BE2' },
-  { name: 'Scikit-learn', cat: 'Tools', color: '#F7931E' },
-  { name: 'XGBoost', cat: 'Tools', color: '#FF6600' },
-  { name: 'OpenCV', cat: 'Tools', color: '#5C3EE8' },
-  { name: 'Pandas', cat: 'Tools', color: '#150458' },
-  { name: 'NumPy', cat: 'Tools', color: '#013243' }
+  { name: 'Git', level: 85, cat: 'Tools', color: '#F05032' },
+  { name: 'GitHub', level: 85, cat: 'Tools', color: '#181717' },
+  { name: 'Linux', level: 80, cat: 'Tools', color: '#FCC624' },
+  { name: 'AWS', level: 60, cat: 'Tools', color: '#FF9900' },
+  { name: 'VS Code', level: 90, cat: 'Tools', color: '#007ACC' },
+  { name: 'Cisco DNA Center', level: 75, cat: 'Tools', color: '#1BA0D7' },
+  { name: 'YOLOv8', level: 80, cat: 'Tools', color: '#8A2BE2' },
+  { name: 'Scikit-learn', level: 75, cat: 'Tools', color: '#F7931E' },
+  { name: 'XGBoost', level: 70, cat: 'Tools', color: '#FF6600' },
+  { name: 'OpenCV', level: 70, cat: 'Tools', color: '#5C3EE8' },
+  { name: 'Pandas', level: 80, cat: 'Tools', color: '#150458' },
+  { name: 'NumPy', level: 80, cat: 'Tools', color: '#013243' }
 ];
 
 const categories = ['All', ...Array.from(new Set(skills.map(s => s.cat)))];
